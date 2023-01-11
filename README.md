@@ -13,3 +13,5 @@ Concernant wrapper.c :
 Modifié d'internet, il prend un argument un shellcode qu'il charge en mémoire et l'exécute ensuite.
 J'ai du mal à le faire fonctionner même avec des shellcodes très courts.
 J'en ai donc trouvé un plus simple mais qui ne fonctionne pas.
+Et on le compile avec :
+gcc wrapper.c -o wrapper -fno-stack-protector -z execstack
