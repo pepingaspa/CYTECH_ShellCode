@@ -12,3 +12,4 @@ objdump -d ./shellcode|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d'
 Concernant wrapper.c :
 Modifié d'internet, il prend un argument un shellcode qu'il charge en mémoire et l'exécute ensuite.
 J'ai du mal à le faire fonctionner même avec des shellcodes très courts.
+J'en ai donc trouvé un plus simple mais qui ne fonctionne pas.
