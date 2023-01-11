@@ -1,6 +1,7 @@
 #include <unistd.h>
+#include <stdlib.h>
 
-int main(int argc, char *argv[]){
+void main(){
     execve("/bin/sh", NULL, NULL);
-    return 0;
+    exit(0);
 }
