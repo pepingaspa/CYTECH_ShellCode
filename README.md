@@ -22,9 +22,11 @@ exemple de lancement (ouverture bin/sh) :
 ./wrapper $(python2 -c 'print("\x48\x31\xd2\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x48\xc1\xeb\x08\x53\x48\x89\xe7\x50\x57\x48\x89\xe6\xb0\x3b\x0f\x05")')
 
 
-Concernant asm32 :
+Concernant asm32 et asm64 :
 
 Compilable avec ./build.sh < asmX >
 Lancement de l'executable avec ./asmX
+
+Afin de voir la valeur des returns, faire echo $?
 
 Pour asm05, il faut avoir asm01 de générer.

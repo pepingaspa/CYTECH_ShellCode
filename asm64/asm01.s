@@ -1,8 +1,9 @@
-section .data
+global _start
 section .text
-    global _start
 
 _start:
-    mov eax, 60
-    xor rdi, rdi
-    syscall
+    ;instruction dest, source
+    mov rax, 1
+    mov rbx, 0
+    ;xor rbx, rbx
+    int 80h
