@@ -4,9 +4,11 @@
 #include <unistd.h>
 
 int main(int argc, char *argv[]){
-    if(argc < 2)
+    if(argc < 2){
         printf("error");
         return 1;
+    }
+        
 
     char *shellcode = argv[1];
 
