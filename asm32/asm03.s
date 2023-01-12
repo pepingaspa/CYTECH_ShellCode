@@ -1,5 +1,5 @@
 section .bss
-	Buffer: resb 64
+	Buffer: resb 5
 	BufferSize: equ $-Buffer
 
 section .data

@@ -1,57 +1,60 @@
-section .bss
-    Buffer: resb 64
-    BufferSize: equ $-Buffer
-    
 section .data
-    msg: db 'Entrez un nombre :', 10
-    lg: equ $-msg
+    input dd 0
+
+	msgI:db 'Impair', 10
+	lgI: equ $-msgI
+
+    msgP:db 'Pair', 10
+	lgP: equ $-msgP
+
+    msgS:db 'Saisir un nombre', 10
+	lgS: equ $-msgS
 
 section .text
     global _start
 
 _start:
 
-    ;affichage
     mov eax, 4
     mov ebx, 1
-    mov ecx, msg
-    mov edx, lg
+    mov ecx, msgS
+    mov edx, lgS
     int 80h
 
-    ;saisie
-	mov eax, 3
-	mov ebx, 0
-	mov ecx, Buffer
-	mov edx, BufferSize
-	int 80h
+    ; saisie
+    mov eax, 3
+    mov ebx, 0
+    mov ecx, input
+    mov edx, 4
+    int 0x80
 
-    ;comparaison
-    mov ax, 54
-    mov bx, 2
-    div bx
-    cmp ah, 0
-    jz equal
+    ; pair
+    mov eax, [input]
+    and eax, 1
+    cmp eax, 0
+    je is_even
 
-    ;equal
-    equal :
-
+    ; impair
     mov eax, 4
     mov ebx, 1
-    mov ecx, msg
-    mov edx, lg
+    mov ecx, msgI
+    mov edx, lgI
     int 80h
 
     mov eax, 1
-	mov ebx, 0
-	int 80h 
+    xor ebx, ebx
+    inc ebx
+    int 0x80
 
-    ;not equal
-    not_equal :
-    mov eax, 1
-	mov ebx, 0
-	int 80h
+is_even:
+    ;pair
 
-    ;END OF PRG
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msgP
+    mov edx, lgP
+    int 80h
+
     mov eax, 1
-	mov ebx, 0
-	int 80h
+    xor ebx, ebx
+    int 0x80
