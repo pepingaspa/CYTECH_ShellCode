@@ -19,13 +19,6 @@ section .text
 	mov edx, BufferSize
 	int 80h
 
-	;affiche 1337
-    mov eax, 4
-    mov ebx, 1
-    mov ecx, msg
-    mov edx, lg
-    int 80h
-
 	;comparaison
 	mov ax, [Buffer]
 	mov bx, [comp]
@@ -38,6 +31,14 @@ section .text
 	int 80h
 
 	equal :
+
+	;affiche 1337
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msg
+    mov edx, lg
+    int 80h
+
 	mov eax, 1
 	mov ebx, 0
 	int 80h
