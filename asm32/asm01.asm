@@ -1,8 +1,9 @@
-section .data
+global _start
 section .text
-    global _start
 
 _start:
+    ;instruction dest, source
     mov eax, 1
-    xor ebx, ebx
-    int 0x80
+    mov ebx, 0
+    ;xor ebx, ebx
+    int 80h
